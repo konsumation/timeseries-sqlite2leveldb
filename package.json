@@ -37,8 +37,9 @@
   "version": "0.0.0-semantic-release",
   "description": "{{description}}",
   "main": "dist/index.js",
+  "module": "src/worker.js",
   "keywords": [
-    "npm-package-template"
+    "time series"
   ],
   "dependencies": {
     "sqlite": "^2.8.0"
