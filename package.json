@@ -40,7 +40,9 @@
   "keywords": [
     "npm-package-template"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "sqlite": "^2.8.0"
+  },
   "contributors": [
     {
       "name": "Markus Felten",
