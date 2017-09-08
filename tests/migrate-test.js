@@ -6,7 +6,7 @@ const path = require('path');
 
 test('migrate', async t => {
   const db = await sqlite.open(
-    path.join(__dirname, '../tests', 'fixtures', 'database.db')
+    path.join(__dirname, '../tests', 'fixtures', 'sample.db')
   );
 
   await sqlite2leveldb(db);
