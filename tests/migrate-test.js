@@ -5,7 +5,7 @@ import sqlite from 'sqlite';
 const levelup = require('levelup');
 const path = require('path');
 
-test.skip('migrate', async t => {
+test.serial('migrate', async t => {
   const leveldb = levelup(path.join(__dirname, '../build', 'leveldb'));
 
   const sqldb = await sqlite.open(
@@ -14,6 +14,7 @@ test.skip('migrate', async t => {
 
   await sqlite2leveldb(sqldb, leveldb);
 
+  //leveldb.close();
   t.pass();
 });
 
@@ -30,6 +31,7 @@ test.cb('list', t => {
   });
 
   readStream.on('end', () => {
+    leveldb.close();
     t.end();
   });
 });

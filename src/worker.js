@@ -1,3 +1,8 @@
+function pad(num, size) {
+  const s = '000000000' + num;
+  return s.substr(s.length - size);
+}
+
 export async function sqlite2leveldb(sqldb, leveldb) {
   const DATE = "strftime('%s',date)";
   const stmt = await sqldb.prepare(
@@ -5,17 +10,10 @@ export async function sqlite2leveldb(sqldb, leveldb) {
   );
 
   stmt.each((err, result) => {
-    console.log(result);
-
-    const key = `${result.type}/${result[DATE]}`;
+    const key = `${result.type}/${pad(result[DATE], 10)}`;
 
     leveldb.put(key, result.amount, err => {
       if (err) return console.log('Ooops!', err);
-
-      leveldb.get(key, (err, value) => {
-        if (err) return console.log('Ooops!', err);
-        console.log(`${key}=${value}`);
-      });
     });
   });
 }
