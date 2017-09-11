@@ -1,10 +1,13 @@
 export async function sqlite2leveldb(sqldb, leveldb) {
-  const stmt = await sqldb.prepare('SELECT date,type,amount FROM value_date');
+  const DATE = "strftime('%s',date)";
+  const stmt = await sqldb.prepare(
+    `SELECT ${DATE},type,amount FROM value_date`
+  );
 
   stmt.each((err, result) => {
-    //console.log(result);
+    console.log(result);
 
-    const key = `${result.type}/${result.date}`;
+    const key = `${result.type}/${result[DATE]}`;
 
     leveldb.put(key, result.amount, err => {
       if (err) return console.log('Ooops!', err);
