@@ -5,15 +5,20 @@ function pad(num, size) {
 
 export async function sqlite2leveldb(sqldb, leveldb) {
   const DATE = "strftime('%s',date)";
-  const stmt = await sqldb.prepare(
-    `SELECT ${DATE},type,amount FROM value_date`
+
+  const inserts = [];
+  await sqldb.each(
+    `SELECT ${DATE},type,amount FROM value_date`,
+    (err, result) => {
+      const key = `${result.type}/${pad(result[DATE], 10)}`;
+      inserts.push({ type: 'put', key: key, value: result.amount });
+    }
   );
 
-  stmt.each((err, result) => {
-    const key = `${result.type}/${pad(result[DATE], 10)}`;
-
-    leveldb.put(key, result.amount, err => {
-      if (err) return console.log('Ooops!', err);
+  return new Promise((resolve, reject) => {
+    leveldb.batch(inserts, err => {
+      if (err) reject(err);
+      else resolve();
     });
   });
 }

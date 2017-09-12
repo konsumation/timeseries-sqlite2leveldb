@@ -14,7 +14,7 @@ test.serial('migrate', async t => {
 
   await sqlite2leveldb(sqldb, leveldb);
 
-  //leveldb.close();
+  leveldb.close();
   t.pass();
 });
 
@@ -26,8 +26,11 @@ test.cb('list', t => {
   const readStream = leveldb.createReadStream({ start: 'pv/0', end: 'pv/Z' });
 
   readStream.on('data', data => {
-    console.log(data.key + ' = ' + data.value);
-    t.pass();
+    //console.log(data.key + ' = ' + data.value);
+
+    if (data.key === 'pv/1030665600' && data.value == 2004.1) {
+      t.pass();
+    }
   });
 
   readStream.on('end', () => {
