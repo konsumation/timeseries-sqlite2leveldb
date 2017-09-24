@@ -1,8 +1,9 @@
-function pad(num, size) {
-  const s = '000000000' + num;
-  return s.substr(s.length - size);
-}
-
+/**
+ * convert sqlite data into leveldb data
+ * @param sqldb
+ * @param leveldb
+ * @return {Promise}
+ */
 export async function sqlite2leveldb(sqldb, leveldb) {
   const DATE = "strftime('%s',date)";
 
@@ -10,8 +11,8 @@ export async function sqlite2leveldb(sqldb, leveldb) {
   await sqldb.each(
     `SELECT ${DATE},type,amount FROM value_date`,
     (err, result) => {
-      const key = `${result.type}/${pad(result[DATE], 10)}`;
-      inserts.push({ type: 'put', key: key, value: result.amount });
+      const key = `${result.type}/${result[DATE].padStart(10, '0')}`;
+      inserts.push({ type: 'put', key, value: result.amount });
     }
   );
 
