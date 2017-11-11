@@ -31,9 +31,11 @@ test.cb('list', t => {
   const readStream = leveldb.createReadStream({ start: 'pv/0', end: 'pv/Z' });
 
   readStream.on('data', data => {
-    console.log(data.key + ' = ' + data.value);
+    //console.log(data.key + ' = ' + data.value);
 
-    if (data.key === 'pv/1030665600' && data.value == 2004.1) {
+    if (data.key.toString() === 'pv/1030665600' && data.value == 2004.1) {
+      console.log(data.key + ' = ' + data.value);
+
       t.pass();
     }
   });
