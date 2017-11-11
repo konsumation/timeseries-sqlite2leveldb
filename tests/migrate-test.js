@@ -3,13 +3,16 @@ import { sqlite2leveldb } from '../src/worker';
 import sqlite from 'sqlite';
 
 const levelup = require('levelup');
+const leveldown = require('leveldown');
 const path = require('path');
 
 test.serial('migrate', async t => {
-  const leveldb = levelup(path.join(__dirname, '../build', 'leveldb'));
+  const leveldb = levelup(
+    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
+  );
 
   const sqldb = await sqlite.open(
-    path.join(__dirname, '../tests', 'fixtures', 'sample.db')
+    path.join(__dirname, '..', 'tests', 'fixtures', 'sample.db')
   );
 
   await sqlite2leveldb(sqldb, leveldb);
@@ -21,12 +24,14 @@ test.serial('migrate', async t => {
 test.cb('list', t => {
   t.plan(1);
 
-  const leveldb = levelup(path.join(__dirname, '../build', 'leveldb'));
+  const leveldb = levelup(
+    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
+  );
 
   const readStream = leveldb.createReadStream({ start: 'pv/0', end: 'pv/Z' });
 
   readStream.on('data', data => {
-    //console.log(data.key + ' = ' + data.value);
+    console.log(data.key + ' = ' + data.value);
 
     if (data.key === 'pv/1030665600' && data.value == 2004.1) {
       t.pass();
