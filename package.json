@@ -30,7 +30,7 @@
     "babel-preset-env": "^1.6.1"
   },
   "engines": {
-    "node": ">=8.9.2"
+    "node": ">=8.9.3"
   },
   "version": "0.0.0-semantic-release",
   "description": "migrate time series data from sqlite to leveldb",
