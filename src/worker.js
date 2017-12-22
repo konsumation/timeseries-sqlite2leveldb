@@ -1,8 +1,8 @@
 /**
- * convert sqlite data into leveldb data
- * @param sqldb
- * @param leveldb
- * @return {Promise}
+ * Convert sqlite data into leveldb data
+ * @param {Database} sqldb source sqlite database
+ * @param {Levelup} leveldb destination level db
+ * @return {Promise} A promise that resolves after all records have been inserted
  */
 export async function sqlite2leveldb(sqldb, leveldb) {
   const DATE = "strftime('%s',date)";
