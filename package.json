@@ -1,13 +1,19 @@
 {
   "name": "timeseries-sqlite2leveldb",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arlac77/timeseries-sqlite2leveldb.git"
-  },
-  "bugs": {
-    "url": "https://github.com/arlac77/timeseries-sqlite2leveldb/issues"
-  },
-  "homepage": "https://github.com/arlac77/timeseries-sqlite2leveldb#readme",
+  "version": "0.0.0-semantic-release",
+  "main": "dist/index.js",
+  "module": "src/worker.js",
+  "description": "migrate time series data from sqlite to leveldb",
+  "keywords": [
+    "time series"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
+  "license": "BSD-2-Clause",
   "scripts": {
     "cover": "nyc --temp-directory build/nyc ava",
     "precover": "rollup -c tests/rollup.config.js",
@@ -18,6 +24,11 @@
     "docs": "documentation readme src/worker.js --section=API",
     "semantic-release": "semantic-release",
     "lint": "documentation lint src/worker.js"
+  },
+  "dependencies": {
+    "leveldown": "^2.1.1",
+    "levelup": "^2.0.1",
+    "sqlite": "^2.9.0"
   },
   "devDependencies": {
     "markdown-doctest": "^0.9.1",
@@ -31,28 +42,14 @@
   "engines": {
     "node": ">=8.9.3"
   },
-  "version": "0.0.0-semantic-release",
-  "description": "migrate time series data from sqlite to leveldb",
-  "main": "dist/index.js",
-  "module": "src/worker.js",
-  "keywords": [
-    "time series"
-  ],
-  "dependencies": {
-    "leveldown": "^2.1.1",
-    "levelup": "^2.0.1",
-    "sqlite": "^2.9.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arlac77/timeseries-sqlite2leveldb.git"
   },
-  "contributors": [
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
-  "license": "BSD-2-Clause",
-  "xo": {
-    "space": true
+  "bugs": {
+    "url": "https://github.com/arlac77/timeseries-sqlite2leveldb/issues"
   },
+  "homepage": "https://github.com/arlac77/timeseries-sqlite2leveldb#readme",
   "ava": {
     "files": [
       "build/test-bundle.js"
@@ -70,6 +67,9 @@
       "lcov"
     ],
     "report-dir": "./build/coverage"
+  },
+  "xo": {
+    "space": true
   },
   "template": {
     "repository": {
