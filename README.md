@@ -37,7 +37,7 @@ Convert sqlite data into leveldb data
 -   `sqldb` **Database** source sqlite database
 -   `leveldb` **Levelup** destination level db
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A promise that resolves after all records have been inserted
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>** A promise that resolves after all records have been inserted
 
 # install
 
