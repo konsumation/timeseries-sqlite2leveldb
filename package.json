@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "markdown-doctest": "^0.9.1",
-    "nyc": "^11.7.1",
+    "nyc": "^11.7.3",
     "ava": "^0.25.0",
     "rollup": "^0.58.2",
-    "semantic-release": "^15.2.0",
+    "semantic-release": "^15.4.0",
     "documentation": "^6.3.2",
     "travis-deploy-once": "^5.0.0"
   },
