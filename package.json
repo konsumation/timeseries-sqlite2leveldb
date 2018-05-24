@@ -4,9 +4,7 @@
   "main": "dist/index.js",
   "module": "src/worker.js",
   "description": "migrate time series data from sqlite to leveldb",
-  "keywords": [
-    "time series"
-  ],
+  "keywords": ["time series"],
   "contributors": [
     {
       "name": "Markus Felten",
@@ -41,7 +39,7 @@
     "travis-deploy-once": "^5.0.0"
   },
   "engines": {
-    "node": ">=8.11"
+    "node": ">=10.2"
   },
   "repository": {
     "type": "git",
@@ -52,21 +50,13 @@
   },
   "homepage": "https://github.com/arlac77/timeseries-sqlite2leveldb#readme",
   "ava": {
-    "files": [
-      "build/test-bundle.js"
-    ],
+    "files": ["build/test-bundle.js"],
     "presets": [],
-    "require": [
-      "babel-register"
-    ]
+    "require": ["babel-register"]
   },
   "nyc": {
-    "include": [
-      "build/test-bundle.js"
-    ],
-    "reporter": [
-      "lcov"
-    ],
+    "include": ["build/test-bundle.js"],
+    "reporter": ["lcov"],
     "report-dir": "./build/coverage"
   },
   "xo": {
