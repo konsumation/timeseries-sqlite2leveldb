@@ -26,12 +26,13 @@ migrate time series data from sqlite to leveldb
 ### Table of Contents
 
 -   [sqlite2leveldb](#sqlite2leveldb)
+    -   [Parameters](#parameters)
 
 ## sqlite2leveldb
 
 Convert sqlite data into leveldb data
 
-**Parameters**
+### Parameters
 
 -   `sqldb` **Database** source sqlite database
 -   `leveldb` **Levelup** destination level db
