@@ -1,18 +1,15 @@
 import test from 'ava';
 import { sqlite2leveldb } from '../src/worker';
 import sqlite from 'sqlite';
-
-const levelup = require('levelup');
-const leveldown = require('leveldown');
-const path = require('path');
+import { join } from 'path';
+import levelup from 'levelup';
+import leveldown from 'leveldown';
 
 test.serial('migrate', async t => {
-  const leveldb = levelup(
-    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
-  );
+  const leveldb = levelup(leveldown(join(__dirname, '..', 'build', 'leveldb')));
 
   const sqldb = await sqlite.open(
-    path.join(__dirname, '..', 'tests', 'fixtures', 'sample.db')
+    join(__dirname, '..', 'tests', 'fixtures', 'sample.db')
   );
 
   await sqlite2leveldb(sqldb, leveldb);
@@ -24,9 +21,7 @@ test.serial('migrate', async t => {
 test.cb('list', t => {
   t.plan(1);
 
-  const leveldb = levelup(
-    leveldown(path.join(__dirname, '..', 'build', 'leveldb'))
-  );
+  const leveldb = levelup(leveldown(join(__dirname, '..', 'build', 'leveldb')));
 
   const readStream = leveldb.createReadStream({ start: 'pv/0', end: 'pv/Z' });
 

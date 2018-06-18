@@ -5,6 +5,6 @@ export default {
     format: 'cjs',
     sourcemap: true
   },
-  external: ['ava', 'sqlite'],
+  external: ['ava', 'path', 'sqlite', 'levelup', 'leveldown'],
   plugins: []
 };
