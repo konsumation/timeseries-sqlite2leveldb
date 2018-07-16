@@ -1,3 +1,8 @@
+import istanbul from 'rollup-plugin-istanbul';
+
+import multiEntry from 'rollup-plugin-multi-entry';
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
 export default {
   input: 'tests/migrate-test.js',
   output: {
@@ -6,5 +11,7 @@ export default {
     sourcemap: true
   },
   external: ['ava', 'path', 'sqlite', 'levelup', 'leveldown'],
-  plugins: []
+  plugins: [multiEntry(), istanbul({
+    exclude: ['tests/**/*-test.js']
+  }), resolve(), commonjs()]
 };
