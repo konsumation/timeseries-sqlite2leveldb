@@ -8,7 +8,8 @@ export default {
   output: {
     file: 'build/test-bundle.js',
     format: 'cjs',
-    sourcemap: true
+    sourcemap: true,
+    interop: false
   },
   external: ['ava', 'path', 'sqlite', 'levelup', 'leveldown'],
   plugins: [multiEntry(), istanbul({
