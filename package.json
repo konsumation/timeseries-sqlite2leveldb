@@ -60,7 +60,7 @@
   "homepage": "https://github.com/arlac77/timeseries-sqlite2leveldb#readme",
   "ava": {
     "files": [
-      "tests/test-bundle.js"
+      "tests/*-test.js"
     ],
     "presets": [],
     "require": [
