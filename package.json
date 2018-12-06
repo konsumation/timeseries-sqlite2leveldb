@@ -6,6 +6,9 @@
   },
   "main": "dist/index.js",
   "module": "src/worker.js",
+  "bin": {
+    "timeseries-sqlite2leveldb": "bin/timeseries-sqlite2leveldb"
+  },
   "description": "migrate time series data from sqlite to leveldb",
   "keywords": [
     "time series"
@@ -29,12 +32,12 @@
   },
   "dependencies": {
     "leveldown": "^4.0.0",
-    "sqlite": "^3.0.0"
+    "sqlite": "^3.0.0",
+    "levelup": "^3.1.1"
   },
   "devDependencies": {
     "ava": "^1.0.0-rc.2",
     "documentation": "^8.1.2",
-    "levelup": "^3.1.1",
     "markdown-doctest": "^0.9.1",
     "rollup": "^0.67.4",
     "semantic-release": "^15.12.4",
