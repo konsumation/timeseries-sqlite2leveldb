@@ -6,9 +6,6 @@
   },
   "main": "dist/index.js",
   "module": "src/worker.js",
-  "bin": {
-    "timeseries-sqlite2leveldb": "bin/timeseries-sqlite2leveldb"
-  },
   "description": "migrate time series data from sqlite to leveldb",
   "keywords": [
     "time series"
@@ -20,6 +17,9 @@
     }
   ],
   "license": "BSD-2-Clause",
+  "bin": {
+    "timeseries-sqlite2leveldb": "bin/timeseries-sqlite2leveldb"
+  },
   "scripts": {
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
     "test": "ava",
