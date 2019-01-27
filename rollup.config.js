@@ -22,7 +22,6 @@ export default
         resolve({ preferBuiltins: true }),
         commonjs(),
         json({
-          include: "package.json",
           preferConst: true,
           compact: true
         }),
