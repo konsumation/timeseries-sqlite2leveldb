@@ -4,8 +4,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "module": "src/worker.js",
+  "main": "dist/index.mjs",
+  "module": "src/worker.mjs",
   "description": "migrate time series data from sqlite to leveldb",
   "keywords": [
     "time series"
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
-    "docs": "documentation readme src/worker.js --section=API",
-    "lint": "documentation lint src/worker.js",
+    "docs": "documentation readme src/worker.mjs --section=API",
+    "lint": "documentation lint src/worker.mjs",
     "posttest": "npm run prepare && markdown-doctest",
     "prepare": "rollup -c",
     "test": "ava"

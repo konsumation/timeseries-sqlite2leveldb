@@ -7,10 +7,10 @@ import pkg from "./package.json";
 
 const external = ["sqlite", "levelup", "leveldown"];
 
-export default [
-  ...Object.keys(pkg.bin || {}).map(name => {
+export default
+  Object.keys(pkg.bin || {}).map(name => {
     return {
-      input: `src/${name}-cli.js`,
+      input: `src/${name}-cli.mjs`,
       output: {
         file: pkg.bin[name],
         format: "cjs",
@@ -19,6 +19,7 @@ export default [
         interop: false
       },
       plugins: [
+        resolve({ preferBuiltins: true }),
         commonjs(),
         json({
           include: "package.json",
@@ -30,15 +31,4 @@ export default [
       ],
       external
     };
-  }),
-  {
-    input: pkg.module,
-    output: {
-      file: pkg.main,
-      format: "cjs",
-      interop: false
-    },
-    plugins: [resolve(), commonjs(), cleanup()],
-    external
-  }
-];
+  });
