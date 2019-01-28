@@ -18,10 +18,10 @@ test.serial("migrate", async t => {
     join(here, "..", "tests", "fixtures", "sample.db")
   );
 
-  await sqlite2leveldb(sqldb, leveldb);
+  const count = await sqlite2leveldb(sqldb, leveldb);
 
   leveldb.close();
-  t.pass();
+  t.is(count > 0);
 });
 
 test.cb("list", t => {
