@@ -16,10 +16,6 @@ export async function sqlite2leveldb(sqldb, leveldb) {
     }
   );
 
-  return new Promise((resolve, reject) => {
-    leveldb.batch(inserts, err => {
-      if (err) reject(err);
-      else resolve(inserts.length);
-    });
-  });
+  await leveldb.batch(inserts);
+  return inserts.length;
 }
