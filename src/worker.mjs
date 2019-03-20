@@ -1,21 +1,38 @@
+
+import { Category } from 'konsum-db';
+
 /**
  * Convert sqlite data into leveldb data
  * @param {Database} sqldb source sqlite database
  * @param {Levelup} leveldb destination level db
- * @return {Promise<void>} A promise that resolves after all records have been inserted
+ * @return {Promise<number>} A promise that resolves after all records have been inserted
  */
 export async function sqlite2leveldb(sqldb, leveldb) {
   const DATE = "strftime('%s',date)";
 
-  const inserts = [];
+  const categories = new Map();
+
+  for await (const c of Category.entries(leveldb)) {
+    categories.set(c.name,c);
+  }
+
+  let n = 0;
+
   await sqldb.each(
     `SELECT ${DATE},type,amount FROM value_date`,
     (err, result) => {
-      const key = `${result.type}/${result[DATE].padStart(10, '0')}`;
-      inserts.push({ type: 'put', key, value: result.amount });
+      console.log(n,result);
+      let c = categories.get(result.type);
+      if(c === undefined) {
+        c = new Category(result.type, {});
+        c.write(leveldb);
+        categories.set(c.name,c);
+      }
+      c.writeValue(leveldb,parseFloat(result[DATE]),result.amount);
+      n++;
     }
   );
 
-  await leveldb.batch(inserts);
-  return inserts.length;
+  console.log("NNNN",n);
+  return n;
 }

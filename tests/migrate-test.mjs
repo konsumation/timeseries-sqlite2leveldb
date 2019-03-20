@@ -5,6 +5,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import levelup from "levelup";
 import leveldown from "leveldown";
+import { initialize, Category } from "konsum-db";
 import fs from "fs";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -24,25 +25,22 @@ test.serial("migrate", async t => {
   t.is(count > 0);
 });
 
-test.cb("list", t => {
-  t.plan(1);
-
+test("list", async t => {
   const leveldb = levelup(leveldown(join(here, "..", "build", "leveldb")));
+  await initialize(leveldb);
 
-  const readStream = leveldb.createReadStream({ start: "pv/0", end: "pv/Z" });
+ const categories = new Map();
 
-  readStream.on("data", data => {
-    console.log(data.key + " = " + data.value);
-
-    if (data.key.toString() === "pv/1030665600" && data.value == 2004.1) {
-      console.log(data.key + " = " + data.value);
-
-      t.pass();
-    }
-  });
-
-  readStream.on("end", () => {
-    leveldb.close();
-    t.end();
-  });
+  for await (const c of Category.entries(leveldb)) {
+    categories.set(c.name,c);
+  }
+ 
+  t.deepEqual([...categories.keys()],[
+     'ev',
+     'gs',
+     'pv',
+     'sp',
+     'wa'
+]); 
+  leveldb.close();
 });
