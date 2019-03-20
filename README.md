@@ -7,11 +7,9 @@
 [![Coverage Status](https://coveralls.io/repos/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/r/arlac77/timeseries-sqlite2leveldb)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/arlac77/timeseries-sqlite2leveldb/issues)
-[![Stories in Ready](https://badge.waffle.io/arlac77/timeseries-sqlite2leveldb.svg?label=ready&title=Ready)](http://waffle.io/arlac77/timeseries-sqlite2leveldb)
 [![Dependency Status](https://david-dm.org/arlac77/timeseries-sqlite2leveldb.svg)](https://david-dm.org/arlac77/timeseries-sqlite2leveldb)
 [![devDependency Status](https://david-dm.org/arlac77/timeseries-sqlite2leveldb/dev-status.svg)](https://david-dm.org/arlac77/timeseries-sqlite2leveldb#info=devDependencies)
 [![docs](http://inch-ci.org/github/arlac77/timeseries-sqlite2leveldb.svg?branch=master)](http://inch-ci.org/github/arlac77/timeseries-sqlite2leveldb)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
