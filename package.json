@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.mjs",
+  "main": "src/worker.mjs",
   "module": "src/worker.mjs",
   "description": "migrate time series data from sqlite to leveldb",
   "keywords": [
@@ -24,12 +24,11 @@
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
     "docs": "documentation readme src/worker.mjs --section=API",
     "lint": "documentation lint src/worker.mjs",
-    "posttest": "npm run prepare && markdown-doctest",
     "prepare": "rollup -c",
     "test": "ava"
   },
   "dependencies": {
-    "konsum-db": "^1.0.8",
+    "konsum-db": "^1.0.9",
     "leveldown": "^5.0.0",
     "levelup": "^4.0.1",
     "sqlite": "^3.0.3"
