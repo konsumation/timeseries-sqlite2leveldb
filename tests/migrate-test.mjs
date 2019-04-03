@@ -10,37 +10,36 @@ import fs from "fs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
-test.serial("migrate", async t => {
+async function database() {
   await fs.promises.mkdir(join(here, "..", "build"), { recursive: true });
+  const leveldb = await levelup(
+    leveldown(join(here, "..", "build", "leveldb"))
+  );
+  await initialize(leveldb);
+  return leveldb;
+}
 
-  const leveldb = levelup(leveldown(join(here, "..", "build", "leveldb")));
-
+test.serial("migrate", async t => {
+  const leveldb = await database();
   const sqldb = await sqlite.open(
     join(here, "..", "tests", "fixtures", "sample.db")
   );
 
   const count = await sqlite2leveldb(sqldb, leveldb);
 
-  leveldb.close();
+  await leveldb.close();
   t.is(count > 0);
 });
 
-test("list", async t => {
-  const leveldb = levelup(leveldown(join(here, "..", "build", "leveldb")));
-  await initialize(leveldb);
+test.serial("list", async t => {
+  const leveldb = await database();
 
- const categories = new Map();
+  const categories = new Map();
 
   for await (const c of Category.entries(leveldb)) {
-    categories.set(c.name,c);
+    categories.set(c.name, c);
   }
- 
-  t.deepEqual([...categories.keys()],[
-     'ev',
-     'gs',
-     'pv',
-     'sp',
-     'wa'
-]); 
-  leveldb.close();
+
+  t.deepEqual([...categories.keys()], ["ev", "gs", "pv", "sp", "wa"]);
+  await leveldb.close();
 });
