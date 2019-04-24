@@ -1,8 +1,8 @@
-import { sqlite2leveldb } from './worker';
-import sqlite from 'sqlite';
-import levelup from 'levelup';
-import leveldown from 'leveldown';
-import { initialize } from 'konsum-db';
+import { sqlite2leveldb } from "./worker.mjs";
+import sqlite from "sqlite";
+import levelup from "levelup";
+import leveldown from "leveldown";
+import { initialize } from "konsum-db";
 
 async function migrate() {
   console.log(`migrate ${process.argv[2]} -> ${process.argv[3]}`);
