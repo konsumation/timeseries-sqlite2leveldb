@@ -1,12 +1,12 @@
 import test from "ava";
-import { sqlite2leveldb } from "../src/worker";
-import sqlite from "sqlite";
+import fs from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import sqlite from "sqlite";
 import levelup from "levelup";
 import leveldown from "leveldown";
 import { initialize, Category } from "konsum-db";
-import fs from "fs";
+import { sqlite2leveldb } from "../src/worker.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
@@ -28,7 +28,7 @@ test.serial("migrate", async t => {
   const count = await sqlite2leveldb(sqldb, leveldb);
 
   await leveldb.close();
-  t.is(count > 0);
+  t.true(count > 0);
 });
 
 test.serial("list", async t => {
