@@ -47,7 +47,7 @@ export async function sqlite2leveldb(sqldb, leveldb) {
         console.log(`unknown category ${result.type}`);
       }
 
-      c.writeValue(leveldb, parseFloat(result[DATE]), result.amount);
+      c.writeValue(leveldb, result.amount, parseFloat(result[DATE]));
       n++;
     }
   );
