@@ -1,7 +1,4 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Build Status](https://secure.travis-ci.org/arlac77/timeseries-sqlite2leveldb.png)](http://travis-ci.org/arlac77/timeseries-sqlite2leveldb)
-[![codecov.io](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb/coverage.svg?branch=master)](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb?branch=master)
-[![Coverage Status](https://coveralls.io/repos/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/r/arlac77/timeseries-sqlite2leveldb)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![npm](https://img.shields.io/npm/v/timeseries-sqlite2leveldb.svg)](https://www.npmjs.com/package/timeseries-sqlite2leveldb)
@@ -11,6 +8,9 @@
 [![minified size](https://badgen.net/bundlephobia/min/timeseries-sqlite2leveldb)](https://bundlephobia.com/result?p=timeseries-sqlite2leveldb)
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/arlac77/timeseries-sqlite2leveldb/issues)
+[![Build Status](https://secure.travis-ci.org/arlac77/timeseries-sqlite2leveldb.png)](http://travis-ci.org/arlac77/timeseries-sqlite2leveldb)
+[![codecov.io](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb/coverage.svg?branch=master)](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb?branch=master)
+[![Coverage Status](https://coveralls.io/repos/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/r/arlac77/timeseries-sqlite2leveldb)
 
 # timeseries-sqlite2leveldb
 
