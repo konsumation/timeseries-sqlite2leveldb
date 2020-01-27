@@ -29,7 +29,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "konsum-db": "^1.5.8",
+    "konsum-db": "^1.5.9",
     "leveldown": "^5.4.0",
     "levelup": "^4.3.1",
     "sqlite": "^3.0.3"
