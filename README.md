@@ -1,14 +1,14 @@
-[![npm](https://img.shields.io/npm/v/timeseries-sqlite2leveldb.svg)](https://www.npmjs.com/package/timeseries-sqlite2leveldb)
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![minified size](https://badgen.net/bundlephobia/min/timeseries-sqlite2leveldb)](https://bundlephobia.com/result?p=timeseries-sqlite2leveldb)
-[![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
-[![GitHub Issues](https://img.shields.io/github/issues/arlac77/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/arlac77/timeseries-sqlite2leveldb/issues)
 [![Build Status](https://secure.travis-ci.org/arlac77/timeseries-sqlite2leveldb.png)](http://travis-ci.org/arlac77/timeseries-sqlite2leveldb)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Known Vulnerabilities](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb)
+[![GitHub Issues](https://img.shields.io/github/issues/arlac77/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/arlac77/timeseries-sqlite2leveldb/issues)
 [![Greenkeeper](https://badges.greenkeeper.io/arlac77/timeseries-sqlite2leveldb.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://snyk.io/test/github/arlac77/timeseries-sqlite2leveldb)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
+[![minified size](https://badgen.net/bundlephobia/min/timeseries-sqlite2leveldb)](https://bundlephobia.com/result?p=timeseries-sqlite2leveldb)
+[![npm](https://img.shields.io/npm/v/timeseries-sqlite2leveldb.svg)](https://www.npmjs.com/package/timeseries-sqlite2leveldb)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/arlac77/timeseries-sqlite2leveldb)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 # timeseries-sqlite2leveldb
 
