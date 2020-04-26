@@ -60,8 +60,8 @@
   "homepage": "https://github.com/arlac77/timeseries-sqlite2leveldb#readme",
   "template": {
     "inheritFrom": [
-      "arlac77/template-cli-app",
-      "arlac77/template-github"
+      "arlac77/template-arlac77-github",
+      "arlac77/template-cli-app"
     ]
   }
 }
