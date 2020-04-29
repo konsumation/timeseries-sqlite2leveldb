@@ -7,7 +7,6 @@
   "sideEffects": false,
   "type": "module",
   "main": "src/worker.mjs",
-  "module": "src/worker.mjs",
   "description": "migrate time series data from sqlite to leveldb",
   "keywords": [
     "time series"
