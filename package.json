@@ -6,9 +6,9 @@
   },
   "sideEffects": false,
   "type": "module",
-  "main": "src/worker.mjs",
+  "main": "./src/worker.mjs",
   "exports": {
-    ".": "src/worker.mjs",
+    ".": "./src/worker.mjs",
     "./": "./"
   },
   "description": "migrate time series data from sqlite to leveldb",
@@ -28,14 +28,15 @@
   "scripts": {
     "test": "ava --timeout 2m",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
-    "docs": "documentation readme src/worker.mjs --section=API",
-    "lint": "documentation lint src/worker.mjs"
+    "docs": "documentation readme ./src/worker.mjs --section=API",
+    "lint": "documentation lint ./src/worker.mjs"
   },
   "dependencies": {
     "konsum-db": "^1.5.11",
     "leveldown": "^5.6.0",
     "levelup": "^4.4.0",
-    "sqlite": "^4.0.7"
+    "sqlite": "^4.0.8",
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "ava": "^3.8.2",

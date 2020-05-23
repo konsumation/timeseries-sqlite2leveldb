@@ -2,7 +2,9 @@ import test from "ava";
 import fs from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import sqlite from "sqlite";
+import sqlite from 'sqlite'
+import sqlite3 from 'sqlite3'
+
 import levelup from "levelup";
 import leveldown from "leveldown";
 import { initialize, Category } from "konsum-db";
@@ -21,9 +23,10 @@ async function database() {
 
 test.serial("migrate", async t => {
   const leveldb = await database();
-  const sqldb = await sqlite.open(
-    join(here, "..", "tests", "fixtures", "sample.db")
-  );
+  const sqldb = await sqlite.open({
+    filename: join(here, "..", "tests", "fixtures", "sample.db"),
+    driver: sqlite3.Database
+  });
 
   const count = await sqlite2leveldb(sqldb, leveldb);
 
