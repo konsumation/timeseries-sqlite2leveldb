@@ -10,7 +10,6 @@
 [![codecov.io](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb/coverage.svg?branch=master)](http://codecov.io/github/arlac77/timeseries-sqlite2leveldb?branch=master)
 [![Coverage Status](https://coveralls.io/repos/arlac77/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/r/arlac77/timeseries-sqlite2leveldb)
 
-
 # timeseries-sqlite2leveldb
 
 migrate time series data from sqlite to leveldb
@@ -33,7 +32,7 @@ Convert sqlite data into leveldb data
 -   `sqldb` **Database** source sqlite database
 -   `leveldb` **Levelup** destination level db
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>** A promise that resolves after all records have been inserted
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)>** A promise that resolves after all records have been inserted
 
 # install
 
