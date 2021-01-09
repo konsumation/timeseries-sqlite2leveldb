@@ -3,15 +3,15 @@ import { Category } from "konsum-db";
 /**
  * Convert sqlite data into leveldb data
  * @param {Database} sqldb source sqlite database
- * @param {Levelup} leveldb destination level db
+ * @param {Master} master konsum master
  * @return {Promise<number>} A promise that resolves after all records have been inserted
  */
-export async function sqlite2leveldb(sqldb, leveldb) {
+export async function sqlite2leveldb(sqldb, master) {
   const DATE = "strftime('%s',date)";
 
   const categories = new Map();
 
-  for await (const c of Category.entries(leveldb)) {
+  for await (const c of Category.entries(master.db)) {
     categories.set(c.name, c);
   }
 
@@ -26,7 +26,7 @@ export async function sqlite2leveldb(sqldb, leveldb) {
           color: result.result,
           decimal_places: result.decimal_places
         });
-        c.write(leveldb);
+        c.write(master.db);
         categories.set(c.name, c);
         //console.log(c, result);
       }
@@ -42,12 +42,12 @@ export async function sqlite2leveldb(sqldb, leveldb) {
       let c = categories.get(result.type);
       if (c === undefined) {
         c = new Category(result.type, {});
-        c.write(leveldb);
+        c.write(master.db);
         categories.set(c.name, c);
         console.log(`unknown category ${result.type}`);
       }
 
-      c.writeValue(leveldb, result.amount, parseFloat(result[DATE]));
+      c.writeValue(master.db, result.amount, parseFloat(result[DATE]));
       n++;
     }
   );

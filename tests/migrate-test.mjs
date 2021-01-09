@@ -1,48 +1,44 @@
 import test from "ava";
-import fs from "fs";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-import sqlite from 'sqlite'
-import sqlite3 from 'sqlite3'
-
+import { mkdir } from "fs/promises";
+import { open } from "sqlite";
+import sqlite3 from "sqlite3";
 import levelup from "levelup";
 import leveldown from "leveldown";
-import { initialize, Category } from "konsum-db";
+import { Master, Category } from "konsum-db";
 import { sqlite2leveldb } from "../src/worker.mjs";
 
-const here = dirname(fileURLToPath(import.meta.url));
-
 async function database() {
-  await fs.promises.mkdir(join(here, "..", "build"), { recursive: true });
+  await mkdir(new URL("../build", import.meta.url).pathname, {
+    recursive: true
+  });
   const leveldb = await levelup(
-    leveldown(join(here, "..", "build", "leveldb"))
+    leveldown(new URL("../build/leveldb", import.meta.url).pathname)
   );
-  await initialize(leveldb);
-  return leveldb;
+  return await Master.initialize(leveldb);
 }
 
 test.serial("migrate", async t => {
-  const leveldb = await database();
-  const sqldb = await sqlite.open({
-    filename: join(here, "..", "tests", "fixtures", "sample.db"),
+  const master = await database();
+  const sqldb = await open({
+    filename: new URL("../tests/fixtures/sample.db", import.meta.url).pathname,
     driver: sqlite3.Database
   });
 
-  const count = await sqlite2leveldb(sqldb, leveldb);
+  const count = await sqlite2leveldb(sqldb, master);
 
-  await leveldb.close();
+  await master.close();
   t.true(count > 0);
 });
 
 test.serial("list", async t => {
-  const leveldb = await database();
+  const master = await database();
 
   const categories = new Map();
 
-  for await (const c of Category.entries(leveldb)) {
+  for await (const c of Category.entries(master.db)) {
     categories.set(c.name, c);
   }
 
   t.deepEqual([...categories.keys()], ["ev", "gs", "pv", "sp", "wa"]);
-  await leveldb.close();
+  await master.close();
 });
