@@ -26,7 +26,7 @@ Convert sqlite data into leveldb data
 ### Parameters
 
 -   `sqldb` **Database** source sqlite database
--   `leveldb` **Levelup** destination level db
+-   `master` **Master** konsum master
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)>** A promise that resolves after all records have been inserted
 
