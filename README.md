@@ -3,7 +3,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/timeseries-sqlite2leveldb)](https://bundlephobia.com/result?p=timeseries-sqlite2leveldb)
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/konsumation/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/konsumation/timeseries-sqlite2leveldb/issues)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
 [![Coverage Status](https://coveralls.io/repos/konsumation/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/github/konsumation/timeseries-sqlite2leveldb)
 
 # timeseries-sqlite2leveldb
@@ -16,8 +16,8 @@ migrate time series data from sqlite to leveldb
 
 ### Table of Contents
 
--   [sqlite2leveldb](#sqlite2leveldb)
-    -   [Parameters](#parameters)
+*   [sqlite2leveldb](#sqlite2leveldb)
+    *   [Parameters](#parameters)
 
 ## sqlite2leveldb
 
@@ -25,10 +25,10 @@ Convert sqlite data into leveldb data
 
 ### Parameters
 
--   `sqldb` **Database** source sqlite database
--   `master` **Master** konsum master
+*   `sqldb` **Database** source sqlite database
+*   `master` **Master** konsum master
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)>** A promise that resolves after all records have been inserted
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)>** A promise that resolves after all records have been inserted
 
 # install
 
