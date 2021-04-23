@@ -3,7 +3,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/timeseries-sqlite2leveldb)](https://bundlephobia.com/result?p=timeseries-sqlite2leveldb)
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/konsumation/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/konsumation/timeseries-sqlite2leveldb/issues)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
 [![Coverage Status](https://coveralls.io/repos/konsumation/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/github/konsumation/timeseries-sqlite2leveldb)
 
 # timeseries-sqlite2leveldb
