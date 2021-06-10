@@ -36,7 +36,7 @@
   "dependencies": {
     "konsum-db": "^3.4.0",
     "leveldown": "^6.0.0",
-    "levelup": "^5.0.0",
+    "levelup": "^5.0.1",
     "sqlite": "^4.0.19",
     "sqlite3": "^5.0.1"
   },
