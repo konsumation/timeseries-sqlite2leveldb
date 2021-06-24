@@ -34,7 +34,7 @@
     "lint:docs": "documentation lint ./src/worker.mjs"
   },
   "dependencies": {
-    "konsum-db": "^3.4.0",
+    "konsum-db": "^3.4.2",
     "leveldown": "^6.0.0",
     "levelup": "^5.0.1",
     "sqlite": "^4.0.19",
