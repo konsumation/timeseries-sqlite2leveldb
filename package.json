@@ -8,7 +8,7 @@
   "exports": {
     ".": "./src/worker.mjs"
   },
-  "description": "migrate time series data from sqlite to leveldb",
+  "description": "migrate timeseries data from sqlite to leveldb",
   "keywords": [
     "time series"
   ],
