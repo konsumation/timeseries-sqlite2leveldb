@@ -2,6 +2,7 @@ build
 /node_modules/**
 *.log
 *.dump
+bun.lockb
 .DS_Store
 *.node
 .test
