@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/timeseries-sqlite2leveldb.svg)](https://www.npmjs.com/package/timeseries-sqlite2leveldb)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Open Bundle](https://bundlejs.com/badge-light.svg)](https://bundlejs.com/?q=timeseries-sqlite2leveldb)
+[![bundlejs](https://deno.bundlejs.com/?q=timeseries-sqlite2leveldb\&badge=detailed)](https://bundlejs.com/?q=timeseries-sqlite2leveldb)
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/konsumation/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/konsumation/timeseries-sqlite2leveldb/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
