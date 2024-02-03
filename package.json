@@ -2,7 +2,8 @@
   "name": "timeseries-sqlite2leveldb",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "exports": {
     ".": "./src/worker.mjs"
@@ -40,7 +41,7 @@
     "sqlite3": "^5.1.4"
   },
   "devDependencies": {
-    "ava": "^6.1.0",
+    "ava": "^6.1.1",
     "c8": "^9.1.0",
     "documentation": "^14.0.0",
     "semantic-release": "^23.0.0"
