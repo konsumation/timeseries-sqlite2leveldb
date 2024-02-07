@@ -4,6 +4,9 @@
 [![downloads](http://img.shields.io/npm/dm/timeseries-sqlite2leveldb.svg?style=flat-square)](https://npmjs.org/package/timeseries-sqlite2leveldb)
 [![GitHub Issues](https://img.shields.io/github/issues/konsumation/timeseries-sqlite2leveldb.svg?style=flat-square)](https://github.com/konsumation/timeseries-sqlite2leveldb/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Ftimeseries-sqlite2leveldb%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/timeseries-sqlite2leveldb/goto)
+[![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Known Vulnerabilities](https://snyk.io/test/github/konsumation/timeseries-sqlite2leveldb/badge.svg)](https://snyk.io/test/github/konsumation/timeseries-sqlite2leveldb)
 [![Coverage Status](https://coveralls.io/repos/konsumation/timeseries-sqlite2leveldb/badge.svg)](https://coveralls.io/github/konsumation/timeseries-sqlite2leveldb)
 
 # timeseries-sqlite2leveldb
