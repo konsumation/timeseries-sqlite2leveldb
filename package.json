@@ -26,11 +26,11 @@
     "timeseries-sqlite2leveldb": "timeseries-sqlite2leveldb-cli.mjs"
   },
   "scripts": {
-    "test": "npm run test:ava",
+    "test": "node --run test:ava",
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs && documentation readme ./src/worker.mjs --section=API",
-    "lint": "npm run lint:docs",
+    "lint": "node --run lint:docs",
     "lint:docs": "documentation lint ./src/**/*.mjs && documentation lint ./src/worker.mjs"
   },
   "dependencies": {
