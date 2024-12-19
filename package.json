@@ -21,7 +21,7 @@
       "name": "Konstantin Karpman"
     }
   ],
-  "license": "BSD-2-Clause",
+  "license": "0BSD",
   "bin": {
     "timeseries-sqlite2leveldb": "timeseries-sqlite2leveldb-cli.mjs"
   },
